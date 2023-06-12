@@ -22,14 +22,14 @@ int who_did_win_in_diagonal(char tic_tac_toe[][3])
 	if ((tic_tac_toe[0][0] == 'X' || tic_tac_toe[0][0] == 'x') &&
 		(tic_tac_toe[0][0] == tic_tac_toe[1][1] && tic_tac_toe[0][0] == tic_tac_toe[2][2]))
 		winnerIs = 1;
-	if ((tic_tac_toe[0][2] == 'X' || tic_tac_toe[0][2] == 'x') &&
+	else if ((tic_tac_toe[0][2] == 'X' || tic_tac_toe[0][2] == 'x') &&
 		(tic_tac_toe[0][2] == tic_tac_toe[1][1] && tic_tac_toe[0][2] == tic_tac_toe[2][0]))
 		winnerIs = 1;
 
 	if ((tic_tac_toe[0][0] == 'Y' || tic_tac_toe[0][0] == 'y') &&
 		(tic_tac_toe[0][0] == tic_tac_toe[1][1] && tic_tac_toe[0][0] == tic_tac_toe[2][2]))
 		winnerIs = 2;
-	if ((tic_tac_toe[0][2] == 'Y' || tic_tac_toe[0][2] == 'y') &&
+	else if ((tic_tac_toe[0][2] == 'Y' || tic_tac_toe[0][2] == 'y') &&
 		(tic_tac_toe[0][2] == tic_tac_toe[1][1] && tic_tac_toe[0][2] == tic_tac_toe[2][0]))
 		winnerIs = 2;
 
@@ -128,7 +128,7 @@ int main()
 								'_', '_', '_', 
 								'_', '_', '_', };
 
-	while (gamer_X != true && gamer_Y != true && nobody != true)
+	while (!gamer_X && !gamer_Y && !nobody)
 	{
 		std::cout << "Enter to coordinates: ";
 		std::cin >> coorX >> coorY;
